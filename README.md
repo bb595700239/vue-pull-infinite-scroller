@@ -4,8 +4,8 @@
 
 ```js
 import Vue from 'vue'
-import VueScroller from 'vue-scroller'
-Vue.use(VueScroller)
+import VuePullInfiniteScroller from 'vue-pull-infinite-scroller'
+Vue.use(VuePullInfiniteScroller)
 ```
 
 ```html
