@@ -28,23 +28,22 @@ Vue.use(VuePullInfiniteScroller)
 ```
 ```js
 methods: {
-	 refresh: function (done) {
+    refresh: function (done) {
         // ajax
         done();
-     },
-     infinite: function (done) {
-	 	// ajax
-	 	
-	 	  // success
-	 	    // go on
-	 	    done()
-	 	    // end
-	 	    done('end')
-	 	  
-	 	  // error
-	 	  done('error')
-	 	
-     }
+    },
+    infinite: function (done) {
+    // ajax
+        
+        // success
+            // go on
+            done()
+            // end
+            done('end')
+        
+        // error
+        done('error')
+    }
 }
 ```
 
