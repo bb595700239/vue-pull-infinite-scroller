@@ -5,10 +5,11 @@
   <meta name="viewport" content="width=device-width, user-scalable=no">
   <script src="https://unpkg.com/vue@2.2.6/dist/vue.min.js"></script>
   <script src="../vue-pull-infinite-scroller.min.js"></script>
-  <title>Vue Scroller</title>
+  <title>Vue Pull Infinite Scroller</title>
   <style>
     html, body {
       margin: 0;
+      font-size: 50px;
     }
 
     * {
@@ -34,9 +35,7 @@
 </head>
 <body>
 <div id="app">
-  <pull-infinite-scroller :on-refresh="refresh"
-            :on-infinite="infinite"
-            style="padding-top: 44px;">
+  <pull-infinite-scroller :on-refresh="refresh" :on-infinite="infinite" no-data-text="木有数据啦！" style="height: calc(100vh);">
     <div v-for="(item, index) in items" class="row" :class="{'grey-bg': index % 2 == 0}">
       {{ item }}
     </div>
@@ -51,36 +50,42 @@
     },
     
     mounted: function () {
-      for (var i = 1; i <= 20; i++) {
+      for (var i = 1; i <= 2; i++) {
         this.items.push(i + ' - keep walking, be 2 with you.');
       }
       this.top = 1;
-      this.bottom = 20;
+      this.bottom = 2;
     },
 
     methods: {
       refresh: function (done) {
         var self = this
         setTimeout(function () {
-          var start = self.top - 1
-          for (var i = start; i > start - 10; i--) {
-            self.items.splice(0, 0, i + ' - keep walking, be 2 with you.');
-          }
-          self.top = self.top - 10;
+          self.items.splice(2,self.items.length-2)
+          self.bottom = 2
           done();
-        }, 1500)
+        }, 500)
       },
-
       infinite: function (done) {
         var self = this
+        var random = Math.random()
         setTimeout(function () {
-          var start = self.bottom + 1;
-          for (var i = start; i < start + 10; i++) {
-            self.items.push(i + ' - keep walking, be 2 with you.');
+          if(random>.85){
+	          done('error')
+	          return
           }
-          self.bottom = self.bottom + 10;
-          done();
-        }, 1500)
+          if(self.bottom<20){
+            var start = self.bottom + 1;
+            for (var i = start; i < start + 2; i++) {
+                self.items.push(i + ' - keep walking, be 2 with you.');
+            }
+            self.bottom = self.bottom + 2;
+            done()
+          }else{
+            done('end')
+          }
+
+        }, 300)
       }
     }
   });

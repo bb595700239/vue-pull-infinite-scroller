@@ -1,6 +1,6 @@
 {
   "name": "vue-pull-infinite-scroller",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Vue component for native scrolling, pull to refresh & infinite loading.",
   "main": "dist/vue-pull-infinite-scroller.min.js",
   "author": "joubn <595700239@qq.com>",
@@ -10,7 +10,6 @@
     "url": "https://github.com/bb595700239/vue-pull-infinite-scroller.git"
   },
   "scripts": {
-    "dev": "webpack-dev-server --inline --hot --host=0.0.0.0 --port=8080",
     "doc": "cross-env NODE_ENV=production BUILD=doc webpack --progress --hide-modules",
     "build": "cross-env NODE_ENV=production BUILD=publish webpack --progress --hide-modules"
   },
@@ -20,7 +19,8 @@
     "pulltorefresh",
     "pull to refresh",
     "pull-to-refresh",
-    "infinite load"
+    "infinite load",
+    "native"
   ],
   "dependencies": {
     "vue": "^2.2.6",
