@@ -43,6 +43,11 @@
   </pull-infinite-scroller>
 </div>
 <script>
+  document.body.addEventListener('touchmove', function (evt) {
+    evt.preventDefault()
+  },{
+	  passive: false
+  });
   new Vue({
     el: '#app',
 

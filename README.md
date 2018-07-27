@@ -47,9 +47,17 @@ methods: {
 }
 ```
 
+## 重要
+
+<b>组件一定要设置固定高度</b>
+
+<b>组件内包含另一种块滑动区域可以写在`no_scroll`class容器里</b>
+
+
+
 ## API
 
-#### Scroller component attributes:
+#### component attributes:
 
 | Attr. Name | Description | Required | Default Value |
 |-----|-----|-----|-----|
