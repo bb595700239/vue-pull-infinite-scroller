@@ -51,19 +51,23 @@ methods: {
 
 <b>组件一定要设置固定高度</b>
 
-<b>组件内包含另一种块滑动区域可以写在`no_scroll`class容器里</b>
+<b>组件内包含另一种块滑动区域（如：amap）可以写在class为`no_scroll`容器里</b>
 
 
 
 ## API
 
-#### component attributes:
+#### scroller component attributes:
 
 | Attr. Name | Description | Required | Default Value |
 |-----|-----|-----|-----|
 | onRefresh | pull to refresh callback | N | - |
 | onInfinite | infinite loading callback | N | - |
-| noDataText | no data text | N | 没有更多数据 |
+
+
+#### scroller vm instance methods:
+
+- `reload()` reload scroller
 
 
 

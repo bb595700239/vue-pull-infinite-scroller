@@ -36,7 +36,8 @@
 </head>
 <body>
 <div id="app">
-  <pull-infinite-scroller :on-refresh="refresh" :on-infinite="infinite" no-data-text="木有数据啦！" style="height: calc(100vh);">
+  <pull-infinite-scroller :on-refresh="refresh" :on-infinite="infinite" no-data-text="木有数据啦！"
+                          style="height: calc(100vh);">
     <div v-for="(item, index) in items" class="row" :class="{'grey-bg': index % 2 == 0}">
       {{ item }}
     </div>
@@ -49,7 +50,7 @@
     data: {
       items: []
     },
-    
+
     mounted: function () {
       for (var i = 1; i <= 2; i++) {
         this.items.push(i + ' - keep walking, be 2 with you.');
@@ -62,7 +63,7 @@
       refresh: function (done) {
         var self = this
         setTimeout(function () {
-          self.items.splice(2,self.items.length-2)
+          self.items.splice(2, self.items.length - 2)
           self.bottom = 2
           done();
         }, 500)
@@ -71,18 +72,18 @@
         var self = this
         var random = Math.random()
         setTimeout(function () {
-          if(random>.85){
-	          done('error')
-	          return
+          if (random > .85) {
+            done('error')
+            return
           }
-          if(self.bottom<20){
+          if (self.bottom < 20) {
             var start = self.bottom + 1;
             for (var i = start; i < start + 2; i++) {
-                self.items.push(i + ' - keep walking, be 2 with you.');
+              self.items.push(i + ' - keep walking, be 2 with you.');
             }
             self.bottom = self.bottom + 2;
             done()
-          }else{
+          } else {
             done('end')
           }
 
