@@ -1,6 +1,6 @@
 {
   "name": "vue-pull-infinite-scroller",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Vue component for native scrolling, pull to refresh & infinite loading.",
   "main": "dist/vue-pull-infinite-scroller.min.js",
   "author": "joubn <595700239@qq.com>",
