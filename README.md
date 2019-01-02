@@ -1,4 +1,4 @@
-# vue-pull-infinite-scroller ![version](https://img.shields.io/badge/version-%20v1.0.2%20-green.svg) ![vue](https://img.shields.io/badge/vue-%20v2.1%20-green.svg) 
+# vue-pull-infinite-scroller ![version](https://img.shields.io/badge/version-%20v1.0.3%20-green.svg) ![vue](https://img.shields.io/badge/vue-%20v2.1%20-green.svg) 
 
 [vue-pull-infinite-scroller](https://github.com/bb595700239/vue-pull-infinite-scroller) is a native scrolling component that performs well in a webview, pull to refresh & infinite loading.
 
