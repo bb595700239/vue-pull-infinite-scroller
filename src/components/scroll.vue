@@ -36,7 +36,7 @@
         <slot></slot>
       </div>
       <div class="load" ref="load" v-if="onInfinite">
-        <p v-if="loadingState==0">加载完成</p>
+        <p v-if="loadingState==0">{{noDataText}}</p>
         <p v-else-if="loadingState==3" @click="loadingState =1 ;deInit()">加载失败，点击重试</p>
         <p v-else>
           <svg class="load-icon" viewBox="0 0 64 64">
@@ -141,8 +141,9 @@
       scrollTo(y, duration = 200) {
         this.$refs.my_scroller_box.style.transition = `${duration}ms`;
         this.diff = y;
-        setTimeout(() => {
+        let timeout = setTimeout(() => {
           this.$refs.my_scroller_box.style.transition = '';
+          window.clearTimeout(timeout)
         }, duration);
       },
       findParent(node){
@@ -196,11 +197,11 @@
             this.onRefresh(() => {
               this.refreshText = '加载完成'
               this.state = 'loaded-done'
-              setTimeout(() => {
+              let timeout = setTimeout(() => {
                 this.scrollTo(0)
                 this.reload();
-              }, 400)
-
+                window.clearTimeout(timeout)
+              }, 400);
             })
             this.refreshText = '加载中...'
           }
@@ -214,10 +215,8 @@
           this.$refs.my_scroller_box.addEventListener('touchmove', this.touchmove);
           this.$refs.my_scroller_box.addEventListener('touchend', this.touchend);
         }
-
       },
-    },
-    components: {}
+    }
   }
 </script>
 <style lang="css" scoped>

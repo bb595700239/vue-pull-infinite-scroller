@@ -4,7 +4,7 @@
 
 ## Demo
 
-[http://joubn.com/vue-pull-infinite-scroller/dist/example/index.html](http://joubn.com/vue-pull-infinite-scroller/dist/example/index.html)
+[https://bb595700239.github.io/vue-pull-infinite-scroller/dist/example/index.html](https://bb595700239.github.io/vue-pull-infinite-scroller/dist/example/index.html)
 
 
 ## How to use
