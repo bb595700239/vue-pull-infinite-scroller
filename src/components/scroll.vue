@@ -105,7 +105,7 @@
       deInit: _.debounce(function () {
         if (!this.onInfinite) return
         if (this.loadingState === 0 || this.loadingState === 2 || this.loadingState === 3) return
-        if (this.$refs.my_scroller.clientHeight > this.$refs.load.offsetTop) {
+        if (this.$refs.my_scroller.clientHeight >= this.$refs.load.offsetTop) {
           this.loadingState = 2
           this.onInfinite(this.finishInfinite)
           this.deInit()
